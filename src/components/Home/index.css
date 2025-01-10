@@ -82,4 +82,47 @@
   
 
 
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-hover:hover {
+    transform: scale(1.05); /* Slightly enlarges the card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+  }
+  
+  .card-hover img {
+    transition: transform 0.3s ease;
+  }
+  
+  .card-hover:hover img {
+    transform: scale(1.1); /* Zooms in the image slightly */
+  }
+  
+
+  .welcome-message {
+    background-color: #f7f9fc; /* Light background for soft look */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .welcome-message h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .welcome-message p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: #6c757d;
+  }
+  
+  .welcome-message .text-warning {
+    color: #ffc107; /* Gold color for emphasis */
+  }
+  
+  .welcome-message .text-primary {
+    color: #007bff; /* Blue color for the heading */
+  }
   

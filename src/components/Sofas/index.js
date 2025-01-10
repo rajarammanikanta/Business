@@ -1,5 +1,4 @@
 import NavbarContainer from "../Home/NavbarContainer";
-import Example from "../Home/Tabs";
 import SofasList from "./SofasList";
 import ShopBySofa from "./sofatypes";
 
@@ -7,7 +6,6 @@ const Sofas = () => {
   return (
     <div className="container mt-5">
       <NavbarContainer />
-      <Example />
 
       <div className="row mb-4 justify-content-center align-items-center">
         <div className="col-12">

@@ -1,6 +1,7 @@
-import Button from 'react-bootstrap/Button';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
+import './index.css'
 
 const shopByCategory = [
   {
@@ -41,17 +42,17 @@ const shopByCategory = [
 ];
 
 function ShopByCategoryCards() {
-  const navigate = useNavigate(); // Correctly use useNavigate hook
+  const navigate = useNavigate();
 
   const clickToGet = (category) => {
     if (category === "Sofas") {
-      navigate("/sofas"); // Navigate to Sofas page
+      navigate("/sofas");
     }
     if (category === "Beds") {
-      navigate("/beds"); // Navigate to Beds page
+      navigate("/beds");
     }
     if (category === "Dining") {
-      navigate("/dining"); // Navigate to Dining page
+      navigate("/dining");
     }
     // Add more conditions for other categories as needed
   };
@@ -60,20 +61,20 @@ function ShopByCategoryCards() {
     <div className="container mt-5">
       <div className="row justify-content-center">
         {shopByCategory.map((item, index) => (
-          <div key={index} className="col-12 col-md-4 col-lg-3 mb-4">
-            <Card style={{ width: '100%' }}>
+          <div
+            key={index}
+            className="col-12 col-md-4 col-lg-3 mb-4"
+            onClick={() => clickToGet(item.category)}
+            style={{ cursor: "pointer" }}
+          >
+            <Card style={{ width: '100%', overflow: 'hidden' }} className="shadow-sm card-hover">
               <Card.Img
                 variant="top"
                 src={item.image}
-                style={{ height: '200px', objectFit: 'cover' }} // Set constant height and object-fit
+                style={{ height: '300px', objectFit: 'cover' }}
               />
-              <Card.Body>
+              <Card.Body className="text-center">
                 <Card.Title>{item.category}</Card.Title>
-                <Card.Text>{item.description}</Card.Text>
-                {/* Center the Shop Now button */}
-                <div className="d-flex justify-content-center">
-                  <Button variant="primary" onClick={() => clickToGet(item.category)}>Shop Now</Button>
-                </div>
               </Card.Body>
             </Card>
           </div>

@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap'; // Import Bootstrap Grid and Cardimp
 
 import NavbarContainer from '../Home/NavbarContainer';
-import Example from '../Home/Tabs';
 
 const SofaDetail = () => {
   const { id } = useParams(); // Get the sofa id from the URL
@@ -21,7 +20,6 @@ const SofaDetail = () => {
   return (
     <Container className='pt-5'>
         <NavbarContainer/> 
-        <Example/>
       <Row>
         <Col md={12}>
           <Card className="shadow-sm">

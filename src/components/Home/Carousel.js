@@ -17,6 +17,7 @@ function ControlledCarousel() {
       controls={false}
       interval={3000} // Optional: Adjust auto-slide interval (in milliseconds)
       style={{ height: "100%" }} // Allow height to adjust automatically
+      className="pt-3"
     >
       <Carousel.Item style={{ height: "100%" }}>
         <img
