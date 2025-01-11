@@ -7,8 +7,8 @@ const products = [
       images: [
         "https://m.media-amazon.com/images/I/6167riKZSNL._AC_UF894,1000_QL80_.jpg",
         "https://www.wardbrothers.co.uk/cdn/shop/articles/parker-knoll-boston-recliner-chair.jpg?v=1691501058",
-        "https://www.nilkamalhomes.com/cdn/shop/files/Bakewell3strLS.jpg?crop=center&height=300&v=1707457971&width=300",
-        "https://www.nilkamalhomes.com/cdn/shop/files/BEATRIX1SSOFALS2.jpg?crop=center&height=300&v=1727072077&width=300",
+        "https://res.litfad.com/site/img/item/2022/11/06/6735859/600x600.jpg",
+        "https://www.jiomart.com/images/product/original/fnsfrs51tn35162/lebowski-recliner-product-images-ofnsfrs51tn35162-p597561862-0-202301140446.jpg?im=Resize=(420,420)",
       ],
       availableColors: ["Brown", "Black", "Grey"],
       designs: ["Modern", "Classic", "Minimalist"],
@@ -294,8 +294,8 @@ const products = [
       description: "A luxurious leather sofa for your living space",
       price: 1299,
       images: [
-        "https://w0.peakpx.com/wallpaper/94/252/HD-wallpaper-purple-stylish-leather-sofa-living-room-modern-interior-design-minimalism-table-on-the-floor.jpg"
-,        "https://img.freepik.com/free-photo/brown-sofa-blue-room_1194-6647.jpg?semt=ais_hybrid",
+        "https://w0.peakpx.com/wallpaper/94/252/HD-wallpaper-purple-stylish-leather-sofa-living-room-modern-interior-design-minimalism-table-on-the-floor.jpg",
+        "https://img.freepik.com/free-photo/brown-sofa-blue-room_1194-6647.jpg?semt=ais_hybrid",
         "https://image.made-in-china.com/202f0j00zZNhWqgIkSkn/Brown-Vintage-Italian-Modern-Faux-Leather-Sofa-with-Metal-Leg-for-Living-Room.jpg",
         "https://s.alicdn.com/@sc04/kf/H3db9f7665c6a429592f7106075a4df4cZ.png_720x720q50.png",
         

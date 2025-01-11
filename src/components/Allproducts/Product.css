@@ -1,103 +1,102 @@
 .product-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Prevents the image from overflowing outside the card */
-  }
-  
-  .product-card:hover {
-    transform: translateY(-10px); /* Moves the card up slightly */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
-  }
-  
-  .product-card img {
-    transition: transform 0.3s ease;
-    width: 100%; /* Ensure the image takes full width of the card */
-    height: 100%; /* Ensure the image takes full height of the card */
-  }
-  
-  .product-card:hover img {
-    transform: scale(1.1); /* Zooms the image slightly */
-  }
-  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevents the image from overflowing outside the card */
+}
 
-  /* View More Button Styles */
+.product-card:hover {
+  transform: translateY(-10px); /* Moves the card up slightly */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+.product-card img {
+  transition: transform 0.3s ease;
+  width: 100%; /* Ensure the image takes full width of the card */
+  height: 100%; /* Ensure the image takes full height of the card */
+}
+
+.product-card:hover img {
+  transform: scale(1.1); /* Zooms the image slightly */
+}
+
+
+/* View More Button Styles */
 .view-more-btn {
-    background-color: #28a745; /* Green color for the button */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .view-more-btn:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: scale(1.05); /* Slight scaling effect */
-  }
-  
-  .view-more-btn:focus {
-    outline: none; /* Remove focus outline */
-  }
-  
+  background-color: #28a745; /* Green color for the button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-  /* Custom Styles */
+.view-more-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+.view-more-btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+
+/* Custom Styles */
 .product-card {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-card h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  .product-card p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .product-card .text-primary {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .product-card h5 {
-    font-size: 1.125rem;
-    color: #333;
-    margin-top: 1.5rem;
-  }
-  
-  .product-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .product-card ul li {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 0.5rem;
-  }
-  
-  .product-card button {
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .product-card button:hover {
-    background-color: #0056b3;
-    cursor: pointer;
-  }
-  
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.product-card .text-primary {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.product-card h5 {
+  font-size: 1.125rem;
+  color: #333;
+  margin-top: 1.5rem;
+}
+
+.product-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-card ul li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.product-card button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}

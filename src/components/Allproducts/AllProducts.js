@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Card, Button, Form, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./Product.css";
 
@@ -107,9 +107,21 @@ const AllProducts = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [visibleProducts, setVisibleProducts] = useState(6);
+  const [loading, setLoading] = useState(false);
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value.toLowerCase());
+  };
+
+  const handleSearchKeyPress = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent form submission
+      setLoading(true);
+      // Simulate a delay for loading products
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    }
   };
 
   const handleShopNow = (id) => {
@@ -134,6 +146,12 @@ const AllProducts = () => {
     setVisibleProducts((prev) => prev + 6);
   };
 
+  useEffect(() => {
+    if (searchQuery === "") {
+      setVisibleProducts(6);
+    }
+  }, [searchQuery]);
+
   return (
     <Container className="mt-4">
       <h2 className="text-center mb-4">Our Products</h2>
@@ -145,8 +163,16 @@ const AllProducts = () => {
           placeholder="Search for products (e.g., Sofa, Recliner)"
           value={searchQuery}
           onChange={handleSearchChange}
+          onKeyDown={handleSearchKeyPress}
         />
       </Form>
+
+      {/* Loader */}
+      {loading && (
+        <div className="text-center mb-4">
+          <Spinner animation="border" variant="primary" />
+        </div>
+      )}
 
       <Row>
         {filteredProducts.slice(0, visibleProducts).map((product) => (
@@ -194,7 +220,7 @@ const AllProducts = () => {
       )}
 
       {/* No products found message */}
-      {filteredProducts.length === 0 && (
+      {filteredProducts.length === 0 && !loading && (
         <p className="text-center">No products found matching your search.</p>
       )}
     </Container>

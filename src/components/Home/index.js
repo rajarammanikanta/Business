@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import NavbarContainer from "./NavbarContainer";
 import ShopByCategoryCards from "./ShopByCategoryCards";
@@ -6,31 +6,46 @@ import ControlledCarousel from "./Carousel";
 import Banner from "../Banner/Banner";
 import AllProducts from "../Allproducts/AllProducts";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
+import { FaWhatsapp } from "react-icons/fa";
+import TrustBanner from "../Banner/TrustBanner";
 
 const Home = () => {
-  // State to control the modal
   const [showModal, setShowModal] = useState(false);
+  const [customerCount, setCustomerCount] = useState(1000);
 
-  // Function to close the modal
+  const fetchCustomerCount = () => {
+    const savedCount = localStorage.getItem("customerCount");
+    return savedCount ? parseInt(savedCount, 10) : 1000;
+  };
+
+  const incrementCustomerCount = () => {
+    const currentCount = fetchCustomerCount();
+    const newCount = currentCount + 1;
+    localStorage.setItem("customerCount", newCount);
+    setCustomerCount(newCount);
+  };
+
   const handleClose = () => {
     setShowModal(false);
-    localStorage.setItem("modalClosed", "true"); // Set in localStorage to avoid showing on subsequent loads
   };
 
   useEffect(() => {
-    // Scroll to the top of the page on initial load
-    window.scrollTo(0, 0);
+    // Check if modal has been shown before
+    const modalShown = localStorage.getItem("modalShown");
 
-    // Check if modal was previously closed using localStorage
-    if (!localStorage.getItem("modalClosed")) {
-      setShowModal(true); // Show the modal if it hasn't been closed
+    // If it's the user's first visit, show the modal and set the flag
+    if (!modalShown) {
+      setShowModal(true);
+      localStorage.setItem("modalShown", "true"); // Set the flag in localStorage
     }
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+
+    window.scrollTo(0, 0);
+    incrementCustomerCount();
+  }, []);
 
   return (
-    <div className="container mt-4">
-      {/* Pop-up Modal for Sankranthi Sale */}
+    <div className="container-fluid vh-100 bg-dark text-light d-flex flex-column">
+      {/* Pop-up Modal */}
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header className="bg-primary text-white" closeButton>
           <Modal.Title className="text-uppercase fw-bold">
@@ -45,44 +60,57 @@ const Home = () => {
           </p>
         </Modal.Body>
         <Modal.Footer className="justify-content-center">
-          <Button
-            variant="success"
-            className="px-4 py-2"
-            onClick={handleClose}
-          >
+          <Button variant="success" className="px-4 py-2" onClick={handleClose}>
             Shop Now
           </Button>
         </Modal.Footer>
       </Modal>
 
-      {/* Welcome Message with Marquee */}
-      <div className="welcome-message text-center my-3 py-3 rounded shadow-sm pt-5">
-        <marquee className="fw-bold text-primary fs-4 fs-sm-3 fs-md-2">
-          Welcome to <span className="text-warning">NK Sofa World</span>! Your
-          one-stop destination for premium, comfortable sofas. Browse our
+      {/* Welcome Section */}
+      <div className="text-center py-4 rounded my-3 pt-5">
+        <p className="fs-5 text-light mb-0 pt-2">
+          Your one-stop destination for premium, comfortable sofas. Browse our
           collections and enjoy amazing deals!
-        </marquee>
-      </div>
-      
-      {/* Navbar */}
-      <NavbarContainer />
-      
-      <div className="row">
-        <div className="col-12">
-          <ControlledCarousel />
-        </div>
+        </p>
       </div>
 
+      {/* Navbar */}
+      <NavbarContainer />
+
+      {/* Carousel */}
+      <div className="flex-grow-1">
+        <ControlledCarousel />
+      </div>
+
+      {/* Content */}
       <div className="row mb-4 justify-content-center align-items-center">
         <div className="col-12">
           <AllProducts />
           <Banner />
-          <h2 className="text-center mb-4 fw-bold pt-2">Shop by Category</h2>
+          <h2 className="text-center text-dark mb-4 fw-bold pt-2">Shop by Category</h2>
           <div className="shop-category-container">
             <ShopByCategoryCards />
           </div>
         </div>
       </div>
+
+      {/* Trust Banner */}
+       <TrustBanner customerCount={customerCount}/>
+
+      {/* WhatsApp Button */}
+      <a
+        href="https://wa.me/9493012243?text=Hi%20Welcome%20to%20our%20store!%20How%20can%20we%20assist%20you%20today?"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 p-3"
+        style={{
+          zIndex: 9999,
+          right: "20px",
+          bottom: "20px",
+        }}
+      >
+        <FaWhatsapp size={30} />
+      </a>
     </div>
   );
 };

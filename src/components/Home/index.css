@@ -125,4 +125,14 @@
   .welcome-message .text-primary {
     color: #007bff; /* Blue color for the heading */
   }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+}
+
   
+body {
+  padding: 0;
+  margin: 0;
+}
